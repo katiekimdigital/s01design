@@ -1,6 +1,6 @@
-// S01.DESIGN — main site (studio-branded, client-ready).
-// Previously this was the name-led build, now archived at /classic.
-import { HeroStudio }       from '@/components/sections/HeroStudio'
+// S01.DESIGN — main site. Hero direction: "The Spec Sheet".
+import { HeroSpec }         from '@/components/sections/HeroSpec'
+import { SpecMetrics }      from '@/components/sections/SpecMetrics'
 import { SystematicSection } from '@/components/sections/SystematicSection'
 import { ServicesSection }   from '@/components/sections/ServicesSection'
 import { BentoGrid }         from '@/components/sections/BentoGrid'
@@ -12,14 +12,15 @@ import { ContactSection }    from '@/components/sections/ContactSection'
 export default function Home() {
   return (
     <>
-      <HeroStudio />                    {/* Studio hero                     */}
-      <SystematicSection />             {/* 01 — Systematic by Design       */}
-      <ServicesSection />               {/* 02 — Services                   */}
-      <BentoGrid showLms />             {/* Selected Work + Upskilled LMS    */}
-      <ProcessSection />                {/* 03 — Way of Working              */}
-      <AboutSection />                  {/* 04 — About                       */}
-      <PricingSection showAuditTier />  {/* 05 — Investment + Power Hour      */}
-      <ContactSection />                {/* 06 — Start a Project             */}
+      <HeroSpec />                      {/* Spec-sheet hero (status bar + datasheet) */}
+      <SpecMetrics />                   {/* Measured Output — count-up proof          */}
+      <SystematicSection />             {/* 01 — Systematic by Design                 */}
+      <ServicesSection />               {/* 02 — Services                             */}
+      <BentoGrid showLms />             {/* Selected Work + Upskilled LMS              */}
+      <ProcessSection />                {/* 03 — Way of Working                       */}
+      <AboutSection />                  {/* 04 — About                                */}
+      <PricingSection showAuditTier />  {/* 05 — Investment + Power Hour               */}
+      <ContactSection />                {/* 06 — Start a Project                       */}
     </>
   )
 }

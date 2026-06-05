@@ -13,7 +13,7 @@ const socials = [
 
 const navCells = [
   { label: 'About & Services', href: '/about' },
-  { label: 'Work (09)',        href: '#work' },
+  { label: 'Work',             href: '#work' },
   { label: 'Contact',          href: '#contact' },
 ]
 
@@ -45,11 +45,8 @@ export function HeroStudio() {
             Sydney · {time || '—'} AEST
           </span>
           <span className="hidden md:inline text-zinc-600">Katie Kim · Web Designer &amp; Developer</span>
-          <a href="#contact" className="flex items-center gap-2 hover:text-black transition-colors">
-            Menu
-            <span className="inline-grid grid-cols-2 gap-[2px]" aria-hidden>
-              {[0, 1, 2, 3].map((i) => <span key={i} className="w-[3px] h-[3px] bg-current inline-block" />)}
-            </span>
+          <a href="#contact" className="flex items-center gap-1.5 hover:text-[#FF3000] transition-colors">
+            Start a Project <span aria-hidden>↗</span>
           </a>
         </div>
 

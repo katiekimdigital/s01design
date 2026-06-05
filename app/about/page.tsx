@@ -88,14 +88,14 @@ export default function AboutPage() {
               <a href="https://www.etsy.com/shop/bys01design" target="_blank" rel="noopener noreferrer" className="text-black underline decoration-[#FF3000] decoration-2 underline-offset-2 hover:text-[#FF3000] transition-colors">
                 bys01design
               </a>{' '}
-              (Etsy templates) on the side.
+              on the side.
             </p>
             <p className="font-sans text-[15px] text-zinc-600 leading-[1.7]">
-              Outside the studio: cat and dog mum, devoted café-table regular, and slowly building a more intentional
-              life — with a soft spot for Japan and the art of doing fewer things, better. I write about that at{' '}
+              Outside the studio: cat and dog mum, café-table regular, and a slow convert to doing fewer things,
+              better — with a soft spot for Japan. I write{' '}
               <a href="https://multiplelivestheory.substack.com/" target="_blank" rel="noopener noreferrer" className="text-black underline decoration-[#FF3000] decoration-2 underline-offset-2 hover:text-[#FF3000] transition-colors">
                 Multiple Lives Theory
-              </a>.
+              </a>, a newsletter of essays on reinvention, identity, creativity, and the many selves we become across one lifetime.
             </p>
             <div className="pt-2">
               <Button href="/#contact" variant="primary" arrow>Work Together</Button>

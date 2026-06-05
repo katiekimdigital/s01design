@@ -51,8 +51,8 @@ export function SystematicSection() {
             </h2>
             <motion.p {...fadeUp(0.1)} className="font-sans text-[clamp(15px,1.4vw,19px)] text-zinc-600 leading-[1.65] max-w-[480px]">
               I build digital systems for brands that need their site to work — not just look like it works.
-              The method is Swiss Modernist: rigid grid, deliberate hierarchy, zero decoration.
-              The outcome is a site that converts.
+              Swiss Modernist principles are my foundation: clear hierarchy, intentional structure, nothing wasted.
+              But the system flexes to each brand — I design around your goals, your audience, and the outcome you're after.
             </motion.p>
           </div>
         </motion.div>

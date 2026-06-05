@@ -82,57 +82,66 @@ function ProjectTile({ href, img, imgPosition = 'object-center', type, title, de
   )
 }
 
-// Cochlear client tile — thumbnail background + logo + copy overlay
+// Cochlear — editorial split, matching the project tiles
 function CochlearTile({ index }: { index: number }) {
+  const palette = ['#3B1B6C', '#F1BE24', '#F0F1F3', '#2D2D2D']
+  const meta: [string, string][] = [['Role', 'APAC Web Lead'], ['Type', 'Enterprise'], ['Platform', 'Sitecore']]
   return (
     <motion.div
       custom={index}
       variants={fadeUp}
-      className="relative border-2 border-black bg-black overflow-hidden aspect-square group"
+      className="group relative border-2 border-black bg-white flex flex-col aspect-square overflow-hidden"
     >
-      {/* Thumbnail background */}
-      <Image
-        src="/cochlear-thumb.png"
-        alt="Cochlear APAC"
-        fill
-        className="object-cover object-top opacity-40 group-hover:opacity-25 transition-opacity duration-300"
-      />
-
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-
-      {/* Content */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-between">
-        <div className="flex flex-col gap-0.5">
-          <span className="font-mono text-[9px] font-bold tracking-[0.22em] uppercase text-zinc-400">
-            APAC Web Lead · Contract
-          </span>
-          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-zinc-500">
-            ASX:COH · 2023–2025 · 2 yrs
-          </span>
-        </div>
-
-        {/* Logo */}
-        <div className="flex items-center">
+      {/* Photo — top */}
+      <div className="relative h-[55%] overflow-hidden bg-black">
+        <Image
+          src="/cochlear-thumb.png"
+          alt="Cochlear APAC"
+          fill
+          className="object-cover object-top opacity-45 group-hover:opacity-30 transition-opacity duration-300"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute top-5 left-5">
           <Image
             src="/cochlear.png"
             alt="Cochlear"
-            width={130}
-            height={40}
+            width={104}
+            height={32}
             className="object-contain object-left brightness-0 invert opacity-90"
           />
         </div>
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <p className="font-mono text-[9px] font-bold tracking-[0.18em] uppercase text-zinc-300 mb-1">
+            ASX:COH · Contract · 2 yrs
+          </p>
+          <p className="font-sans font-black text-white text-[20px] leading-tight">APAC Web Operations</p>
+        </div>
+      </div>
 
-        <div className="flex flex-col gap-2">
-          <p className="font-sans font-black text-[15px] uppercase tracking-[-0.02em] text-white leading-tight">
-            APAC Digital<br />Web Operations
-          </p>
-          <p className="font-sans text-[12px] text-zinc-300 leading-[1.55]">
-            Owned full-cycle web production across 13 APAC markets in Sitecore — 10+ product launches, BAU time cut 50%.
-          </p>
-          <p className="font-mono text-[9px] tracking-[0.14em] uppercase text-zinc-500">
-            Sitecore · Figma · 13 Markets
-          </p>
+      {/* Case-study block */}
+      <div className="flex-1 p-5 flex flex-col justify-between gap-4">
+        <p className="font-sans text-[13px] text-zinc-600 leading-[1.6]">
+          Owned full-cycle web production across 13 APAC markets in Sitecore — 10+ product launches and BAU time cut 50%.
+        </p>
+        <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-3 gap-2 border-t border-zinc-200 pt-3">
+            {meta.map(([k, v]) => (
+              <div key={k} className="flex flex-col gap-0.5">
+                <span className="font-mono text-[8px] font-bold tracking-[0.16em] uppercase text-zinc-400">{k}</span>
+                <span className="font-sans text-[11px] text-black font-medium leading-tight">{v}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1.5" aria-hidden>
+              {palette.map((c) => (
+                <span key={c} className="w-4 h-4 border border-black" style={{ backgroundColor: c }} />
+              ))}
+            </div>
+            <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-zinc-400">
+              Case study on request
+            </span>
+          </div>
         </div>
       </div>
     </motion.div>
