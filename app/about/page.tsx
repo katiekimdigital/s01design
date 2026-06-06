@@ -16,7 +16,7 @@ const facts: [string, string][] = [
   ['Availability', 'Currently booking'],
 ]
 
-const timeline: { years: string; role: string; org: string; note: string }[] = [
+const timeline: { years: string; role: string; org: string; href?: string; note: string }[] = [
   {
     years: '2024 — Present',
     role: 'Founder & Web Experience Architect',
@@ -27,12 +27,14 @@ const timeline: { years: string; role: string; org: string; note: string }[] = [
     years: '2023 — 2025',
     role: 'Web Content Specialist & APAC Regional Web Lead',
     org: 'Cochlear Limited (ASX: COH) · Contract',
+    href: 'https://www.cochlear.com/au/en/home',
     note: 'Owned full-cycle web production across 13 APAC markets in Sitecore — 10+ product launches, BAU time cut 50% via 20+ SOPs still in use after my tenure.',
   },
   {
     years: '2022 — 2023',
     role: 'Content Designer / Digital Content Producer',
     org: 'Upskilled / Keypath Education',
+    href: 'https://www.upskilled.edu.au/',
     note: 'Rebuilt the student journey across 40+ Canvas LMS courses — lifting completion 25% and engagement 35%.',
   },
   {
@@ -132,7 +134,13 @@ export default function AboutPage() {
                 <span className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-[#FF3000] pt-1">{t.years}</span>
                 <div className="flex flex-col gap-1.5">
                   <h3 className="font-sans font-black text-[18px] uppercase tracking-[-0.02em] text-black leading-tight">{t.role}</h3>
-                  <p className="font-mono text-[10px] font-bold tracking-[0.14em] uppercase text-zinc-500">{t.org}</p>
+                  <p className="font-mono text-[10px] font-bold tracking-[0.14em] uppercase text-zinc-500">
+                    {t.href ? (
+                      <a href={t.href} target="_blank" rel="noopener noreferrer" className="hover:text-[#FF3000] transition-colors">
+                        {t.org} ↗
+                      </a>
+                    ) : t.org}
+                  </p>
                   <p className="font-sans text-[14px] text-zinc-600 leading-[1.6] mt-1">{t.note}</p>
                 </div>
               </div>

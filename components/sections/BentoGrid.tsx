@@ -84,10 +84,13 @@ function ProjectTile({ href, img, imgPosition = 'object-center', type, title, de
 
 // Cochlear — editorial split, matching the project tiles
 function CochlearTile({ index }: { index: number }) {
-  const palette = ['#3B1B6C', '#F1BE24', '#F0F1F3', '#2D2D2D']
+  const palette = ['#F1BE24', '#3B1B6C', '#F0F1F3', '#2D2D2D']
   const meta: [string, string][] = [['Role', 'APAC Web Lead'], ['Type', 'Enterprise'], ['Platform', 'Sitecore']]
   return (
-    <motion.div
+    <motion.a
+      href="https://www.cochlear.com/au/en/home"
+      target="_blank"
+      rel="noopener noreferrer"
       custom={index}
       variants={fadeUp}
       className="group relative border-2 border-black bg-white flex flex-col aspect-square overflow-hidden"
@@ -138,13 +141,13 @@ function CochlearTile({ index }: { index: number }) {
                 <span key={c} className="w-4 h-4 border border-black" style={{ backgroundColor: c }} />
               ))}
             </div>
-            <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-zinc-400">
-              Case study on request
+            <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-zinc-400 group-hover:text-[#FF3000] transition-colors">
+              cochlear.com ↗
             </span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   )
 }
 
@@ -267,7 +270,10 @@ function LmsTile({ index }: { index: number }) {
   const palette = ['#3B28CC', '#4F12F9', '#E8F6F5', '#222222']
   const meta: [string, string][] = [['Role', 'UX + Content'], ['Type', 'EdTech'], ['Platform', 'Canvas']]
   return (
-    <motion.div
+    <motion.a
+      href="https://www.upskilled.edu.au/"
+      target="_blank"
+      rel="noopener noreferrer"
       custom={index}
       variants={fadeUp}
       className="group relative border-2 border-black bg-white flex flex-col aspect-square overflow-hidden"
@@ -310,13 +316,13 @@ function LmsTile({ index }: { index: number }) {
                 <span key={c} className="w-4 h-4 border border-black" style={{ backgroundColor: c }} />
               ))}
             </div>
-            <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-zinc-400">
-              Case study on request
+            <span className="font-mono text-[10px] font-bold tracking-[0.16em] uppercase text-zinc-400 group-hover:text-[#FF3000] transition-colors">
+              upskilled.edu.au ↗
             </span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   )
 }
 
