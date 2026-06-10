@@ -10,6 +10,7 @@ const EASE = [0.16, 1, 0.3, 1] as const
 const projectTypes = [
   'Website Design + Build',
   'Shopify Experience',
+  'SEO Audit',
   'UX Architecture',
   'Design System',
   'Brand Sprint',

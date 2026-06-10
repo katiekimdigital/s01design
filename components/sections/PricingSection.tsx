@@ -87,35 +87,57 @@ export function PricingSection({ showAuditTier = false }: { showAuditTier?: bool
           </div>
         </motion.div>
 
-        {/* Entry tier — low-commitment first step (V2 only) */}
+        {/* Entry tiers — low-commitment first steps (V2 only) */}
         {showAuditTier && (
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="border-2 border-black bg-white p-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8"
           >
-            <div className="flex flex-col gap-2">
+            <div className="border-2 border-black bg-white p-6 flex flex-col gap-3">
               <span className="font-mono text-[10px] font-bold tracking-[0.22em] uppercase text-[#FF3000]">
                 Start Small · Entry Point
               </span>
               <h3 className="font-sans font-black text-[22px] uppercase tracking-[-0.02em] text-black leading-tight">
                 Power Hour / UX Audit
               </h3>
-              <p className="font-sans text-[14px] text-zinc-600 leading-[1.6] max-w-[520px]">
+              <p className="font-sans text-[14px] text-zinc-600 leading-[1.6] flex-1">
                 A 60-minute strategy call plus a written audit of your site — structure, UX, and the three
                 highest-impact fixes. The lowest-commitment way to work with me.
               </p>
-            </div>
-            <div className="flex items-center gap-6 shrink-0">
-              <div className="flex flex-col">
-                <span className="font-sans font-black text-[clamp(24px,3vw,34px)] leading-none tracking-[-0.04em] text-black">
-                  From $350
-                </span>
-                <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-zinc-400 mt-1">AUD · one-off</span>
+              <div className="flex items-center justify-between gap-6 pt-2">
+                <div className="flex flex-col">
+                  <span className="font-sans font-black text-[clamp(24px,3vw,34px)] leading-none tracking-[-0.04em] text-black">
+                    From $350
+                  </span>
+                  <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-zinc-400 mt-1">AUD · one-off</span>
+                </div>
+                <Button href="#contact" variant="accent" arrow>Book a Power Hour</Button>
               </div>
-              <Button href="#contact" variant="accent" arrow>Book a Power Hour</Button>
+            </div>
+
+            <div className="border-2 border-black bg-white p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] font-bold tracking-[0.22em] uppercase text-[#FF3000]">
+                New · Free to Start
+              </span>
+              <h3 className="font-sans font-black text-[22px] uppercase tracking-[-0.02em] text-black leading-tight">
+                SEO Snapshot + Audit
+              </h3>
+              <p className="font-sans text-[14px] text-zinc-600 leading-[1.6] flex-1">
+                A free lo-fi snapshot of your site's three biggest SEO blockers, delivered in 48 hours —
+                upgrade to the full audit if you want the lot fixed.
+              </p>
+              <div className="flex items-center justify-between gap-6 pt-2">
+                <div className="flex flex-col">
+                  <span className="font-sans font-black text-[clamp(24px,3vw,34px)] leading-none tracking-[-0.04em] text-black">
+                    Free
+                  </span>
+                  <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-zinc-400 mt-1">Full audit from $450 AUD</span>
+                </div>
+                <Button href="/seo-audit" variant="accent" arrow>Get the Free Snapshot</Button>
+              </div>
             </div>
           </motion.div>
         )}
